@@ -5,7 +5,7 @@ exports.config = {
     hostname: 'localhost',
     port: 4444,
     path: '/wd/hub',
-    specs: ['./dist/**/*.feature'],
+    specs: ['./dist/**/Home.feature'],
     maxInstances: 1,
     capabilities: [
         {
@@ -13,10 +13,10 @@ exports.config = {
             browserName: 'chrome',
         },
     ],
-    logLevel: 'trace',
+    logLevel: 'debug',
     outputDir: './test-report/output',
     bail: 0,
-    baseUrl: 'http://automationpractice.com',
+    baseUrl: 'http://qa-wbd.mlb.com',
     waitforTimeout: 10000,
     connectionRetryTimeout: 90000,
     connectionRetryCount: 3,
@@ -61,7 +61,9 @@ exports.config = {
         require('expect-webdriverio').setOptions({ wait: 5000 });
     },
     before() {
-        browser.setWindowSize(1280, 720);
+        browser.setWindowSize(1080, 800);
+        browser.execute("document.body.style.zoom='60%'");
+        browser.keys("\ue0015");
     },
     afterStep(
         uri: undefined,

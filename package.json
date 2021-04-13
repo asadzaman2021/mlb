@@ -1,11 +1,7 @@
 {
-  "name": "demo-webdriverio-cucumber",
+  "name": "mlb-webdriverio-cucumber",
   "version": "0.0.1",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:WarleyGabriel/demo-webdriverio-cucumber.git"
-  },
-  "author": "Warley Gabriel da Paixão",
+  "author": "Asad Zaman",
   "scripts": {
     "build": "npx del ./dist && npx tsc && npx copyfiles -f ./src/test/e2e/features/** ./dist/src/test/e2e/features/",
     "watch": "npx tsc -w",
@@ -16,7 +12,7 @@
     "cucumber:unused:step": "npx ./dist/src/test/e2e/config/CucumberStepManager.js",
     "report:generate": "npx allure generate --clean ./test-report/allure-result/ -o ./test-report/allure-report",
     "report:open": "npx allure open test-report/allure-report",
-    "tests:e2e": "npx del test-report && wdio ./dist/wdio.conf.js"
+    "tests:e2e": "npx wdio ./dist/wdio.conf.js"
   },
   "config": {
     "commitizen": {
@@ -39,9 +35,9 @@
     "expect-webdriverio": "^1.4.1",
     "fibers": "^5.0.0",
     "npm-run-all": "^4.1.5",
-    "wdio-chromedriver-service": "^6.0.4",
+    "wdio-chromedriver-service": "^7.0.0",
     "wdio-timeline-reporter": "^5.1.4",
-    "webdriverio": "^6.12.0"
+    "webdriverio": "^7.3.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
@@ -60,8 +56,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm-run-all code:* build cucumber:*:step",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "pre-commit": "npm-run-all code:* build cucumber:*:step"
     }
   }
 }

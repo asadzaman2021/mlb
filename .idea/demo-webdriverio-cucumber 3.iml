@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="RUBY_MODULE" version="4">
+  <component name="ModuleRunConfigurationManager">
+    <shared />
+  </component>
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$/../mlb-webdriverio-automation">
+      <sourceFolder url="file://$MODULE_DIR$/../mlb-webdriverio-automation/features" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../mlb-webdriverio-automation/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../mlb-webdriverio-automation/test" isTestSource="true" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
